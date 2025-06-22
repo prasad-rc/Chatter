@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Course Recommender</title>
+</head>
+<body>
+    <h2>What do you want to learn?</h2>
+    <form method="POST">
+        <input type="text" name="interest" placeholder="e.g. build AI apps, learn web dev" required>
+        <button type="submit">Recommend</button>
+    </form>
+
+    {% if recommendations %}
+        <h3>Top Course Matches:</h3>
+        <ul>
+            {% for course in recommendations %}
+                <li>{{ course }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
